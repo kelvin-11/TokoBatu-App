@@ -20,7 +20,7 @@ const MyOrder = (props) => {
 
     const toggleModal = React.useCallback((id) => () => {
         setModalVisible(true);
-        axios(`http://192.168.1.27:8080/TokoBatu/web/api/pesanan/details?id=${id}`, {
+        axios(`http://192.168.1.44:8080/TokoBatu/web/api/pesanan/details?id=${id}`, {
             method: 'GET',
         })
             .then(response => {
@@ -36,7 +36,7 @@ const MyOrder = (props) => {
         setLoading(true)
         try {
             const response = await fetch(
-                'http://192.168.1.27:8080/TokoBatu/web/api/pesanan/my-order', {
+                'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/my-order', {
                 method: 'GET',
                 headers: {
                     'Auth': 'Bearer ' + secret_token

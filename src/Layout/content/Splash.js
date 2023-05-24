@@ -12,7 +12,7 @@ const Splash = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Image
-        source={require('../../assets/Logo/splash.png')}
+        source={require('../../assets/logo1.png')}
         style={styles.logo} />
     </SafeAreaView>
   )
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
   },
   logo: {
-    width: 350,
+    width: 300,
+    height: 300,
   }
 })

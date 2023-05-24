@@ -14,7 +14,7 @@ const Produk = props => {
     const getKategori = async () => {
         try {
             let linkkategoriproduk =
-                'http://192.168.1.27:8080/TokoBatu/web/api/category';
+                'http://192.168.1.44:8080/TokoBatu/web/api/category';
             let res = await fetch(linkkategoriproduk, {
                 method: 'GET',
                 headers: {
@@ -37,7 +37,7 @@ const Produk = props => {
     const getData = async (id_kat = null) => {
         try {
             let linkproduk =
-                'http://192.168.1.27:8080/TokoBatu/web/api/products/list-produk';
+                'http://192.168.1.44:8080/TokoBatu/web/api/products/list-produk';
             if (id_kat !== null) {
                 linkproduk += '?id_kat=' + id_kat;
             }
@@ -127,7 +127,7 @@ const Produk = props => {
                                         }}>
                                         <Image
                                             source={{
-                                                uri: 'http://192.168.1.27:8080/' + item.img,
+                                                uri: 'http://192.168.1.44:8080/' + item.img,
                                             }}
                                             style={styles.buttonImageIconStyle}
                                         />

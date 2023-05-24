@@ -38,7 +38,7 @@ export default function ProdukTokoDetails({ route, navigation }) {
 
     const toggleModal = (id) => {
         setModalEdit(true)
-        axios('http://192.168.1.27:8080/TokoBatu/web/api/category', {
+        axios('http://192.168.1.44:8080/TokoBatu/web/api/category', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function ProdukTokoDetails({ route, navigation }) {
             }
 
             const res = await fetch(
-                `http://192.168.1.27:8080/TokoBatu/web/api/user/edit-produk?id=${id}`, {
+                `http://192.168.1.44:8080/TokoBatu/web/api/user/edit-produk?id=${id}`, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -128,7 +128,7 @@ export default function ProdukTokoDetails({ route, navigation }) {
     const Hapus = async (produk_id) => {
         try {
             const res = await fetch(
-                `http://192.168.1.27:8080/TokoBatu/web/api/user/remove-produk?id=${produk_id}`, {
+                `http://192.168.1.44:8080/TokoBatu/web/api/user/remove-produk?id=${produk_id}`, {
                 method: 'GET'
             })
             const data = await res.json();
@@ -155,7 +155,7 @@ export default function ProdukTokoDetails({ route, navigation }) {
                     <Swiper showButtons={true} autoplay={true} autoplayTimeout={4}>
                         <Image
                             source={{
-                                uri: 'http://192.168.1.27:8080/' + route.params?.item.img,
+                                uri: 'http://192.168.1.44:8080/' + route.params?.item.img,
                             }}
                             style={styles.banner}
                         />

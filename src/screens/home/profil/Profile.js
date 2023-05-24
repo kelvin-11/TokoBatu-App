@@ -16,7 +16,7 @@ const Profile = ({ navigation }) => {
                 <View style={styles.img}>
                     {user.img != ('/TokoBatu/web/upload/') ?
                         <Image source={{
-                            uri: 'http://192.168.1.27:8080/' + user.img
+                            uri: 'http://192.168.1.44:8080/' + user.img
                         }}
                             style={{
                                 width: 100,

@@ -156,7 +156,7 @@ const Login = ({ navigation }) => {
     //     const t = JSON.stringify(formData);
     //     // console.log("apppppp "+t)
 
-    //     const response = fetch('http://192.168.1.27:8080/TokoBatu/web/api/user/login', {
+    //     const response = fetch('http://192.168.1.44:8080/TokoBatu/web/api/user/login', {
     //         method: 'POST',
     //         headers: {
     //             // 'Accept': 'application/json',

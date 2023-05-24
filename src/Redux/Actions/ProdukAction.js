@@ -6,7 +6,7 @@ export const getProduct = () => async dispatch => {
             type: 'allProductRequest',
         });
         const { data } = await axios.get(
-            'http://192.168.1.27:8080/TokoBatu/web/api/products/list-produk',
+            'http://192.168.1.44:8080/TokoBatu/web/api/products/list-produk',
         );
         dispatch({
             type: 'allProductSuccess',

@@ -18,7 +18,7 @@ export default function Keranjang(props) {
         setLoading(true);
         try {
             const Base_Url =
-                `http://192.168.1.27:8080/TokoBatu/web/api/pesanan/get-pesanan-user`;
+                `http://192.168.1.44:8080/TokoBatu/web/api/pesanan/get-pesanan-user`;
             const response = await fetch(Base_Url, {
                 method: 'GET',
                 headers: {

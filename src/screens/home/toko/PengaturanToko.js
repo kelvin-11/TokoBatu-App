@@ -26,7 +26,7 @@ const PengaturanToko = ({ navigation }) => {
     const [toko, setToko] = useState([]);
     const getToko = async () => {
         try {
-            const res = await fetch('http://192.168.1.27:8080/TokoBatu/web/api/user/get-toko', {
+            const res = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/user/get-toko', {
                 method: 'GET',
                 headers: {
                     'Auth': 'Bearer ' + secret_token
@@ -74,7 +74,7 @@ const PengaturanToko = ({ navigation }) => {
             }
 
             const res = await fetch(
-                'http://192.168.1.27:8080/TokoBatu/web/api/user/pengaturan-toko', {
+                'http://192.168.1.44:8080/TokoBatu/web/api/user/pengaturan-toko', {
                 method: "POST",
                 body: formData,
                 headers: {
@@ -100,7 +100,7 @@ const PengaturanToko = ({ navigation }) => {
                     <View style={styles.img}>
                         {toko.flag != ('/TokoBatu/web/upload/') ?
                             <Image source={{
-                                uri: 'http://192.168.1.27:8080/' + toko.flag
+                                uri: 'http://192.168.1.44:8080/' + toko.flag
                             }}
                                 style={{
                                     width: 140,

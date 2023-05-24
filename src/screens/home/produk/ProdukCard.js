@@ -16,7 +16,7 @@ export default function ProdukCard({ product, navigation }) {
                     <View style={styles.ProductCard}>
                         <Image
                             source={{
-                                uri: 'http://192.168.1.27:8080/' + product.img,
+                                uri: 'http://192.168.1.44:8080/' + product.img,
                             }}
                             style={styles.image}
                         />
