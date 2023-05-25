@@ -6,7 +6,7 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace(ROUTES.HOME_CLICK);
-    }, 3000);
+    }, 2000);
   }, [navigation]);
 
   return (

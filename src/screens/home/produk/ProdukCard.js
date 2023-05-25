@@ -26,12 +26,13 @@ export default function ProdukCard({ product, navigation }) {
                                     color: '#333',
                                     paddingVertical: 5,
                                     textAlign: 'center',
-                                    fontSize: 17,
+                                    fontSize: 15,
                                     fontWeight: 'bold',
                                 }}>
                                 {product.nama_barang}
                             </Text>
                         </View>
+
                         <View
                             style={{
                                 flexDirection: 'row',
@@ -40,19 +41,19 @@ export default function ProdukCard({ product, navigation }) {
                             <View
                                 style={{
                                     flexDirection: 'row',
-                                    alignItems: 'center',
                                     justifyContent: 'space-between',
                                     width: '100%',
-                                    paddingBottom: 10,
                                 }}>
                                 <Text
                                     style={{
                                         color: '#333',
                                         paddingHorizontal: 5,
-                                        fontSize: 15,
+                                        fontSize: 14,
+                                        marginLeft: 3,
                                     }}>
                                     Rp. {product.harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                                 </Text>
+
                                 {/* <Text
                                     style={{
                                         color: '#555',
@@ -63,22 +64,19 @@ export default function ProdukCard({ product, navigation }) {
                                     }}>
                                     {product.diskon.length > 0 ? '$' + product.offerPrice : null}
                                 </Text> */}
-                                <View
+
+
+                                {/* <Text
                                     style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
+                                        color: '#333',
+                                        paddingHorizontal: 5,
+                                        fontSize: 15,
                                     }}>
-                                    <Text
-                                        style={{
-                                            color: '#333',
-                                            paddingHorizontal: 5,
-                                            fontSize: 15,
-                                        }}>
-                                        Stok ({product.stok})
-                                    </Text>
-                                </View>
+                                    Stok ({product.stok})
+                                </Text> */}
                             </View>
                         </View>
+
                         {/* <View
                             style={{
                                 flexDirection: 'row',
@@ -122,6 +120,7 @@ export default function ProdukCard({ product, navigation }) {
                                 </TouchableOpacity>
                             ) : null}
                         </View> */}
+
                         {product.stok === 0 ? (
                             <View style={styles.outOfStock}>
                                 <Text

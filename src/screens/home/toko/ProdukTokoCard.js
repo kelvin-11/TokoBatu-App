@@ -25,7 +25,7 @@ export default function ProdukTokoCard({ product, navigation }) {
                                     color: '#333',
                                     paddingVertical: 5,
                                     textAlign: 'center',
-                                    fontSize: 17,
+                                    fontSize: 15,
                                     fontWeight: 'bold',
                                 }}>
                                 {product.nama_barang}
@@ -42,30 +42,24 @@ export default function ProdukTokoCard({ product, navigation }) {
                                     alignItems: 'center',
                                     justifyContent: 'space-between',
                                     width: '100%',
-                                    paddingBottom: 10,
                                 }}>
                                 <Text
                                     style={{
                                         color: '#333',
                                         paddingHorizontal: 5,
-                                        fontSize: 15,
+                                        fontSize: 14,
                                     }}>
                                     Rp. {product.harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                                 </Text>
-                                <View
+
+                                {/* <Text
                                     style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
+                                        color: '#333',
+                                        paddingHorizontal: 5,
+                                        fontSize: 15,
                                     }}>
-                                    <Text
-                                        style={{
-                                            color: '#333',
-                                            paddingHorizontal: 5,
-                                            fontSize: 15,
-                                        }}>
-                                        Stok ({product.stok})
-                                    </Text>
-                                </View>
+                                    Stok ({product.stok})
+                                </Text> */}
                             </View>
                         </View>
                         {product.stok === 0 ? (
