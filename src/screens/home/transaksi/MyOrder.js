@@ -274,7 +274,7 @@ const MyOrder = (props) => {
                                         style={styles.buttonModal}
                                         activeOpacity={0.8}>
                                         <Icon name='undo' size={20} color={COLORS.white} />
-                                        <Text style={styles.buttonTextModal}>Tutub</Text>
+                                        <Text style={styles.buttonTextModal}>Close</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

@@ -6,44 +6,53 @@ var { width } = Dimensions.get('window');
 
 export default function Banner() {
     const [BannerData, setBannerData] = useState([]);
+    const getBanner = async () => {
+        try {
+            let res = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/banner', {
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json',
+                },
+            });
+            const data = await res.json();
+            setBannerData(data.data);
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 
     useEffect(() => {
-        setBannerData([
-            'https://i.pinimg.com/564x/6b/28/16/6b28163820d4615dcdbcdbfdd6f6ab2a.jpg',
-            'https://i.pinimg.com/564x/df/20/54/df205447c7c7b7dc9393ce3201f72c19.jpg',
-            'https://i.pinimg.com/564x/ff/3c/c7/ff3cc7cda64b9edb55d3861a32546f24.jpg',
-        ]);
-        return () => {
-            setBannerData([]);
-        };
+        getBanner();
     }, []);
 
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <View style={styles.swiper}>
-                    <Swiper
-                        showButtons={false}
-                        autoplay={true}
-                        autoplayTimeout={4}
-                        style={{
-                            height: width / 2,
-                        }}>
-                        {BannerData.map(item => {
-                            return (
-                                <Image
-                                    key={item}
-                                    resizeMode="contain"
-                                    source={{ uri: item }}
-                                    style={styles.banner}
-                                />
-                            );
-                        })}
-                    </Swiper>
-                    <View style={{ height: 20 }}></View>
+        (BannerData != null &&
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.swiper}>
+                        <Swiper
+                            showButtons={false}
+                            autoplay={true}
+                            autoplayTimeout={4}
+                            style={{
+                                height: width / 2,
+                            }}>
+                            {BannerData.map(item => {
+                                return (
+                                    <Image
+                                        key={item}
+                                        resizeMode="contain"
+                                        source={{ uri: 'http://192.168.1.44:8080/' + item.image }}
+                                        style={styles.banner}
+                                    />
+                                );
+                            })}
+                        </Swiper>
+                        <View style={{ height: 20 }}></View>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        )
     );
 }
 
