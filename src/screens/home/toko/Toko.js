@@ -36,7 +36,7 @@ const Toko = ({ navigation }) => {
 
     const toggleModal = () => {
         setModalTambah(true)
-        axios('http://192.168.1.44:8080/TokoBatu/web/api/category', {
+        axios('http://192.168.43.41:8080/TokoBatu/web/api/category', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ const Toko = ({ navigation }) => {
             }
 
             const res = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/user/create-produk', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/user/create-produk', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -116,7 +116,7 @@ const Toko = ({ navigation }) => {
     const [toko, setToko] = useState([]);
     const getToko = async () => {
         try {
-            const res = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/user/get-toko', {
+            const res = await fetch('http://192.168.43.41:8080/TokoBatu/web/api/user/get-toko', {
                 method: 'GET',
                 headers: {
                     'Auth': 'Bearer ' + secret_token
@@ -140,7 +140,7 @@ const Toko = ({ navigation }) => {
                     <View style={styles.img}>
                         {toko.flag != ('/TokoBatu/web/upload/') ?
                             <Image source={{
-                                uri: 'http://192.168.1.44:8080/' + toko.flag
+                                uri: 'http://192.168.43.41:8080/' + toko.flag
                             }}
                                 style={{
                                     width: 140,
@@ -336,7 +336,7 @@ const Toko = ({ navigation }) => {
                                     style={styles.buttonModal}
                                     activeOpacity={0.8}>
                                     <Icon name='undo' size={20} color={COLORS.white} />
-                                    <Text style={styles.buttonTextModal}>Tutub</Text>
+                                    <Text style={styles.buttonTextModal}>Keluar</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     onPress={Simpan}

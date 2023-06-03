@@ -24,7 +24,7 @@ export default function ProductDetails({ route, navigation }) {
                     formData.append('qty', qty);
 
                     const res = await fetch(
-                        'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/create-keranjang', {
+                        'http://192.168.43.41:8080/TokoBatu/web/api/pesanan/create-keranjang', {
                         method: 'POST',
                         body: formData,
                         headers: {
@@ -64,7 +64,7 @@ export default function ProductDetails({ route, navigation }) {
                     <Swiper showButtons={true} autoplay={true} autoplayTimeout={4}>
                         <Image
                             source={{
-                                uri: 'http://192.168.1.44:8080/' + route.params?.item.img,
+                                uri: 'http://192.168.43.41:8080/' + route.params?.item.img,
                             }}
                             style={styles.banner}
                         />
@@ -199,7 +199,7 @@ export default function ProductDetails({ route, navigation }) {
                                 fontWeight: '400',
                                 lineHeight: 20,
                                 paddingTop: 12,
-                                textAlign: 'center',
+                                textAlign: 'left',
                             }}>
                             {route.params?.item.deskripsi_produk}
                         </Text>

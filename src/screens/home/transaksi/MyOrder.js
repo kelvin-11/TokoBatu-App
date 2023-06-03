@@ -20,7 +20,7 @@ const MyOrder = (props) => {
 
     const toggleModal = React.useCallback((id) => () => {
         setModalVisible(true);
-        axios(`http://192.168.1.44:8080/TokoBatu/web/api/pesanan/details?id=${id}`, {
+        axios(`http://192.168.43.41:8080/TokoBatu/web/api/pesanan/details?id=${id}`, {
             method: 'GET',
         })
             .then(response => {
@@ -36,7 +36,7 @@ const MyOrder = (props) => {
         setLoading(true)
         try {
             const response = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/my-order', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/pesanan/my-order', {
                 method: 'GET',
                 headers: {
                     'Auth': 'Bearer ' + secret_token
@@ -178,8 +178,6 @@ const MyOrder = (props) => {
                         <Text style={styles.textModal}>:</Text>
                     </View>
                     <View style={styles.columModal2}>
-
-
                         <Text style={styles.textModal}>{item.estimasi} Hari</Text>
                     </View>
                 </View>
@@ -274,7 +272,7 @@ const MyOrder = (props) => {
                                         style={styles.buttonModal}
                                         activeOpacity={0.8}>
                                         <Icon name='undo' size={20} color={COLORS.white} />
-                                        <Text style={styles.buttonTextModal}>Close</Text>
+                                        <Text style={styles.buttonTextModal}>Keluar</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

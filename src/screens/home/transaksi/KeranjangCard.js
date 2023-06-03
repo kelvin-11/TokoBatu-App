@@ -46,7 +46,7 @@ export default function KeranjangCard({ item, setisLoading }) {
             formData.append('id', id);
             formData.append('qty', qty);
 
-            const res = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/pesanan/updated', {
+            const res = await fetch('http://192.168.43.41:8080/TokoBatu/web/api/pesanan/updated', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -80,7 +80,7 @@ export default function KeranjangCard({ item, setisLoading }) {
             formData.append('id', row);
 
             const res = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/remove-keranjang', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/pesanan/remove-keranjang', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -123,7 +123,7 @@ export default function KeranjangCard({ item, setisLoading }) {
                             }}>
                                 <TouchableOpacity style={{ paddingRight: 20 }}>
                                     <Image source={{
-                                        uri: 'http://192.168.1.44:8080/' + data.img
+                                        uri: 'http://192.168.43.41:8080/' + data.img
                                     }}
                                         style={[styles.centerElement, { height: 90, width: 90, backgroundColor: '#eeeeee' }]}
                                     />

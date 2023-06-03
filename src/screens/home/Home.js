@@ -16,7 +16,7 @@ const Home = ({ navigation }) => {
     const [products, setProduct] = useState([])
     const getProduct = async () => {
         try {
-            const response = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/products/lates-produk', {
+            const response = await fetch('http://192.168.43.41:8080/TokoBatu/web/api/products/lates-produk', {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

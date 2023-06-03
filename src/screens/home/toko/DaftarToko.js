@@ -52,7 +52,7 @@ const DaftarToko = ({ navigation }) => {
             }
 
             const res = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/user/register-toko', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/user/register-toko', {
                 method: 'POST',
                 body: formData,
                 headers: {

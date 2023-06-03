@@ -10,7 +10,7 @@ export const userLogin = (email, password) => async dispatch => {
         formData.append('password', password);
 
         const response = await fetch(
-            `http://192.168.1.44:8080/TokoBatu/web/api/user/login`, {
+            `http://192.168.43.41:8080/TokoBatu/web/api/user/login`, {
             method: 'POST',
             body: formData,
         });
@@ -36,7 +36,7 @@ export const userRegister = (name, email, password) => async dispatch => {
         formData.append('password', password);
 
         const response = await fetch(
-            `http://192.168.1.44:8080/TokoBatu/web/api/user/register`, {
+            `http://192.168.43.41:8080/TokoBatu/web/api/user/register`, {
             method: 'POST',
             body: formData,
         });
@@ -52,7 +52,7 @@ export const userRegister = (name, email, password) => async dispatch => {
 // Log out User
 // export const logOutUser = () => async dispatch => {
 //     try {
-//         await axios.get(`http://192.168.1.44:8080/TokoBatu/web/api/user/logout`);
+//         await axios.get(`http://192.168.43.41:8080/TokoBatu/web/api/user/logout`);
 //         dispatch({ type: 'userLogOutSucess' });
 //     } catch (error) {
 //         dispatch({ type: 'userLogOutFail', payload: error.response.data.message });

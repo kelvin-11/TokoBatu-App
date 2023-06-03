@@ -8,7 +8,7 @@ export default function Banner() {
     const [BannerData, setBannerData] = useState([]);
     const getBanner = async () => {
         try {
-            let res = await fetch('http://192.168.1.44:8080/TokoBatu/web/api/banner', {
+            let res = await fetch('http://192.168.43.41:8080/TokoBatu/web/api/banner', {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',
@@ -42,7 +42,7 @@ export default function Banner() {
                                     <Image
                                         key={item}
                                         resizeMode="contain"
-                                        source={{ uri: 'http://192.168.1.44:8080/' + item.image }}
+                                        source={{ uri: 'http://192.168.43.41:8080/' + item.image }}
                                         style={styles.banner}
                                     />
                                 );

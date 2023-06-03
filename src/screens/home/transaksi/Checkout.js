@@ -34,7 +34,7 @@ const Checkout = ({ navigation }) => {
 
     useEffect(() => {
         //Api Provinsi
-        axios('http://192.168.1.44:8080/TokoBatu/web/api/jasa-kirim/provinsi', {
+        axios('http://192.168.43.41:8080/TokoBatu/web/api/jasa-kirim/provinsi', {
             method: 'GET',
         })
             .then(response => {
@@ -55,7 +55,7 @@ const Checkout = ({ navigation }) => {
 
     //Api Kota/Kabupaten Dari provinsi terpilih
     const handleState = (provinsi) => {
-        axios(`http://192.168.1.44:8080/TokoBatu/web/api/jasa-kirim/district?id_provinsi=${provinsi}`, {
+        axios(`http://192.168.43.41:8080/TokoBatu/web/api/jasa-kirim/district?id_provinsi=${provinsi}`, {
             method: 'GET',
         })
             .then(response => {
@@ -78,7 +78,7 @@ const Checkout = ({ navigation }) => {
 
     useEffect(() => {
         //API Jasa Kirim
-        axios('http://192.168.1.44:8080/TokoBatu/web/api/jasa-kirim/jasa', {
+        axios('http://192.168.43.41:8080/TokoBatu/web/api/jasa-kirim/jasa', {
             method: 'GET',
         })
             .then(res => {
@@ -100,7 +100,7 @@ const Checkout = ({ navigation }) => {
     }, [])
     //Api Paket
     const handlePaket = (district, courier) => {
-        axios(`http://192.168.1.44:8080/TokoBatu/web/api/jasa-kirim/paket?destination=${district}&weight=1000&courier=${courier}`, {
+        axios(`http://192.168.43.41:8080/TokoBatu/web/api/jasa-kirim/paket?destination=${district}&weight=1000&courier=${courier}`, {
             method: 'GET',
         })
             .then(response => {
@@ -131,7 +131,7 @@ const Checkout = ({ navigation }) => {
             formData.append('estimasi', paket1);
 
             const res = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/update-pesanan', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/pesanan/update-pesanan', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -165,7 +165,7 @@ const Checkout = ({ navigation }) => {
             formData.append('jasa', jasa1);
 
             const res = await fetch(
-                'http://192.168.1.44:8080/TokoBatu/web/api/pesanan/checkout', {
+                'http://192.168.43.41:8080/TokoBatu/web/api/pesanan/checkout', {
                 method: 'POST',
                 body: formData,
                 headers: {
