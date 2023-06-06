@@ -82,7 +82,7 @@ const Checkout = ({ navigation }) => {
             method: 'GET',
         })
             .then(res => {
-                console.log('Jasa Kirim ' + JSON.stringify(res.data.data));
+                // console.log('Jasa Kirim ' + JSON.stringify(res.data.data));
                 const count = Object.keys(res.data.data).length;
                 let jasaArray = [];
                 for (let i = 0; i < count; i++) {
@@ -174,7 +174,7 @@ const Checkout = ({ navigation }) => {
             }
             );
             const data = await res.json();
-            console.log('Data Checkout ' + JSON.stringify(data));
+            // console.log('Data Checkout ' + JSON.stringify(data));
             if (data.success === true) {
                 navigation.navigate(ROUTES.MY_ORDER);
                 navigation.navigate(ROUTES.WEBVIEW, { uri: data.url });

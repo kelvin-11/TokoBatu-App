@@ -9,7 +9,6 @@ export async function getHeaders() {
 	let userData = await AsyncStorage.getItem('userData');
 	if (userData) {
 		userData = JSON.parse(userData);
-		// console.log(userData.accessToken, 'header')
 		return {
 			authorization: `${userData.access_token}`,
 		};

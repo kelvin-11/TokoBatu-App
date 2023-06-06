@@ -15,7 +15,7 @@ export const userLogin = (email, password) => async dispatch => {
             body: formData,
         });
         const { data } = await response.json();
-        console.log("Res ==> " + JSON.stringify(data));
+        // console.log("Res ==> " + JSON.stringify(data));
 
         if (data === null) {
             showDanger('Email Atau Pasword Anda Salah')
@@ -41,7 +41,7 @@ export const userRegister = (name, email, password) => async dispatch => {
             body: formData,
         });
         const { data } = await response.json();
-        console.log('Res ==> ' + JSON.stringify(data));
+        // console.log('Res ==> ' + JSON.stringify(data));
 
         dispatch(register(data));
     } catch (error) {
@@ -67,7 +67,7 @@ export const userRegister = (name, email, password) => async dispatch => {
 //     const config = {headers: {'Content-Type': 'application/json'}};
 
 //     const {data} = await axios.post(
-//       `http://192.168.1.4:80/ikm/web/api/user/forgot`,
+//       `http://192.168.43.41.4:80/ikm/web/api/user/forgot`,
 //       {email},
 //       config,
 //     );

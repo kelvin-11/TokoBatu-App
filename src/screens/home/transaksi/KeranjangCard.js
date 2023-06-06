@@ -54,7 +54,7 @@ export default function KeranjangCard({ item, setisLoading }) {
                 }
             })
             const data = await res.json();
-            console.log('Quantity ' + JSON.stringify(data));
+            // console.log('Quantity ' + JSON.stringify(data));
             setisLoading(false)
         } catch (e) {
             console.log(`Error ${e}`);
