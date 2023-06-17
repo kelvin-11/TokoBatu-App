@@ -6,14 +6,14 @@ const Webview = ({ route }) => {
     return (
         <WebView
             source={{ uri: route.params.uri }}
-            startInLoadingState={true}
-            renderLoading={() => (
-                <ActivityIndicator
-                    color='black'
-                    size='large'
-                    style={styles.flexContainer}
-                />
-            )}
+            // startInLoadingState={true}
+            // renderLoading={() => (
+            //     <ActivityIndicator
+            //         color='black'
+            //         size='large'
+            //         style={styles.flexContainer}
+            //     />
+            // )}
         />
     )
 }

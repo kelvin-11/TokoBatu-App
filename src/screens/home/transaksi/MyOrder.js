@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { COLORS } from '../../../constants'
 import { useSelector } from 'react-redux'
@@ -7,7 +7,7 @@ import { Header } from '../../../Layout';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Modal from "react-native-modal";
-import axios from 'axios'
+import axios from 'axios';
 
 const MyOrder = (props) => {
     const navigation = props.navigation;
@@ -55,6 +55,7 @@ const MyOrder = (props) => {
         getHistory()
     }, [])
 
+
     const Hendler = ({ item, index }) => {
         const ttl_harga = item.total_harga + item.ongkir
         const Time = item.created_at
@@ -85,7 +86,7 @@ const MyOrder = (props) => {
                         ___________________________________________________
                     </Text>
                 </View>
-            </View>
+            </View >
         )
     }
 
@@ -97,10 +98,18 @@ const MyOrder = (props) => {
         return (
             <View style={styles.contentModal}>
                 <View style={styles.headerModal}>
-                    <Text style={{ color: COLORS.white, fontSize: 20, fontWeight: '800', top: 10, }}>
-                        Detail Pesanan
-                    </Text>
-                    <Text style={{ color: COLORS.black, fontSize: 16, fontWeight: '600' }}>
+                    <View style={styles.headerClose}>
+                        <Text style={{ color: COLORS.white, fontSize: 20, fontWeight: '800', top: 10, }}>
+                            Detail Pesanan
+                        </Text>
+                        <TouchableOpacity
+                            onPress={() => setModalVisible(false)}
+                            style={styles.buttonModal}
+                            activeOpacity={0.8}>
+                            <Text style={styles.buttonTextModal}>X</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={{ color: COLORS.black, fontSize: 16, fontWeight: '800' }}>
                         ______________________________________________
                     </Text>
                 </View>
@@ -237,9 +246,7 @@ const MyOrder = (props) => {
                             <Text style={styles.textHeader}>Harga</Text>
                         </View>
                         <View style={styles.headerBody}>
-                            <TouchableOpacity>
-                                <Text style={styles.textHeader}>Detail</Text>
-                            </TouchableOpacity>
+                            <Text style={styles.textHeader}>Detail</Text>
                         </View>
                     </View>
                     <View>
@@ -258,27 +265,13 @@ const MyOrder = (props) => {
 
                     <Modal isVisible={isModalVisible} >
                         <SafeAreaView style={styles.containerModal}>
-
                             <FlatList
                                 keyExtractor={(item, index) => index.toString()}
                                 data={detail}
                                 renderItem={HandlerModal}
                             />
-
-                            <View style={styles.bottom}>
-                                <View style={styles.bottomContent}>
-                                    <TouchableOpacity
-                                        onPress={() => setModalVisible(false)}
-                                        style={styles.buttonModal}
-                                        activeOpacity={0.8}>
-                                        <Icon name='undo' size={20} color={COLORS.white} />
-                                        <Text style={styles.buttonTextModal}>Keluar</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
                         </SafeAreaView>
                     </Modal>
-
                 </View>
             </SafeAreaView>
         </>
@@ -320,7 +313,7 @@ const styles = StyleSheet.create({
     },
     colum: {
         marginHorizontal: 19,
-        marginVertical: 7,
+        marginVertical: 6,
         right: 10,
         top: 10
     },
@@ -377,29 +370,19 @@ const styles = StyleSheet.create({
     columModal2: {
         marginLeft: 10,
     },
-    bottom: {
-        backgroundColor: '#fff',
-        borderColor: '#f6f6f6',
-        borderRadius: 8,
-    },
-    bottomContent: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     buttonModal: {
-        backgroundColor: COLORS.red,
-        padding: 12,
-        margin: 12,
-        borderRadius: 5,
-        width: 170,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        top: 10,
+        marginHorizontal: 70,
+        left: 80,
+        width: 50,
     },
     buttonTextModal: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#fff',
-        fontWeight: 'bold',
-        marginHorizontal: 12
+        fontWeight: '800',
+        textAlign: 'center',
     },
+    headerClose: {
+        flexDirection: 'row',
+    }
 })
