@@ -142,8 +142,10 @@ export default function ProdukCard({ product, navigation }) {
 
 const styles = StyleSheet.create({
     ProductCard: {
-        width: width / 2 - 25,
-        height: width / 1.8,
+        // width: width / 2 - 25,
+        // height: width / 1.8,
+        width: 180,
+        height: 240,
         borderRadius: 10,
         elevation: 10,
         backgroundColor: COLORS.white,
@@ -152,7 +154,8 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: width / 2 - 60,
+        // height: width / 2 - 60,
+        height: 150,
         resizeMode: 'contain',
         borderTopRightRadius: 10,
         borderTopLeftRadius: 10,

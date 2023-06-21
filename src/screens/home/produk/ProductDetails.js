@@ -6,6 +6,7 @@ import Swiper from 'react-native-swiper';
 import { selectUser } from '../../../Redux/Features/userSlice';
 import { ROUTES } from '../../../constants';
 import { showDanger, showError, showSuccess } from '../../auth/utils/HelperFunction';
+import Lightbox from 'react-native-lightbox';
 
 export default function ProductDetails({ route, navigation }) {
     const user = useSelector(selectUser);
@@ -62,12 +63,14 @@ export default function ProductDetails({ route, navigation }) {
             <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.swiper}>
                     <Swiper showButtons={true} autoplay={true} autoplayTimeout={4}>
-                        <Image
-                            source={{
-                                uri: 'http://192.168.43.41:8080/' + route.params?.item.img,
-                            }}
-                            style={styles.banner}
-                        />
+                        <Lightbox underlayColor="white">
+                            <Image
+                                source={{
+                                    uri: 'http://192.168.43.41:8080/' + route.params?.item.img,
+                                }}
+                                style={styles.banner}
+                            />
+                        </Lightbox>
                     </Swiper>
                 </View>
                 <View style={styles.details_box}>
@@ -315,21 +318,24 @@ const styles = StyleSheet.create({
     //   backgroundColor: '#fff',
     // },
     banner: {
-        width: width * 1,
-        height: width / 1 - 10,
+        // width: width * 1,
+        // height: width / 2,
         resizeMode: 'contain',
-        marginVertical: 10,
+        width: 380,
+        height: 290,
+        marginVertical: 15,
+        marginHorizontal: 15,
     },
     swiper: {
-        width: width * 1,
-        height: width / 2,
+        // width: width * 1,
+        // height: width / 2,
+        width: '100%',
+        height: 320,
         backgroundColor: '#fff',
         position: 'relative',
     },
     details_box: {
         backgroundColor: '#e5e5e5',
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
         padding: 20,
         marginTop: 20,
         marginBottom: height / 8 - 60,
